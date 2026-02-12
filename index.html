@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta property="og:title" content="발렌타인 데이 초대장 도착! 💌">
-    <meta property="og:description" content="너에게 전하고 싶은 메시지가 있어.">
+    <meta property="og:title" content="설날 기념 초대장 도착! 🧧">
+    <meta property="og:description" content="찬이에게 보내는 설날 초대장이야 🙇‍♀️">
     <meta property="og:image" content="https://didooooooooo.github.io/invite/images/main.jpg"> 
     <meta property="og:url" content="https://didooooooooo.github.io/invite/">
     
-    <title>곽찬 보아라 .</title>
+    <title>곽찬 보아라 🙇‍♀️</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
@@ -17,98 +17,96 @@
     <style>
         body {
             font-family: 'Gaegu', cursive;
-            background-color: #fff5f5; 
-            overflow: hidden; /* 스크롤 방지 */
+            background-color: #fff9e6; /* 연한 노랑(한지 느낌) */
+            overflow: hidden;
             position: relative;
         }
-        .heart-animation {
-            animation: heartBeat 1.5s infinite;
-        }
-        @keyframes heartBeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
         
-        /* 똥 이모지 애니메이션 스타일 */
-        .poop {
+        /* 복주머니 & 아이콘 비내리는 애니메이션 */
+        .falling-item {
             position: fixed;
             top: -50px;
             font-size: 24px;
-            z-index: 0; /* 카드 뒤쪽으로 배치 */
-            opacity: 0.7;
+            z-index: 0;
+            opacity: 0.8;
             animation: fall linear forwards;
         }
         @keyframes fall {
-            to { transform: translateY(110vh) rotate(360deg); }
+            0% { transform: translateY(-50px) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
         }
 
-        /* 카드는 똥보다 위에 있어야 함 */
         #card {
             z-index: 10; 
             position: relative;
+            border: 4px solid #f87171; /* 테두리 추가 */
+        }
+        
+        .korean-pattern {
+            background-image: radial-gradient(#fca5a5 2px, transparent 2px);
+            background-size: 20px 20px;
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4 text-gray-800">
+<body class="flex flex-col items-center justify-center min-h-screen p-4 text-gray-800 korean-pattern">
 
-    <div id="card" class="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center space-y-6">
+    <div id="card" class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center space-y-6">
         
-        <div class="text-6xl heart-animation text-red-400">❤️</div>
+        <div class="text-6xl animate-bounce">🧧</div>
 
-        <h1 class="text-3xl font-bold text-red-500">Happy Seol-Nal</h1>
+        <h1 class="text-3xl font-bold text-red-500">Happy Seol-Nal!</h1>
         
         <p class="text-xl leading-relaxed">
-            차나아아아<br>
-            이번 설날에 뭐해?<br>
-            시간 되면... 나랑 맛있는 거 먹자!
+            <b>차나아아아~</b> 🙇‍♀️<br>
+            새해 복 많이 받으시오!<br>
+            이번 설날 연휴에 뭐해?<br>
+            세뱃돈 대신... <br>나랑 맛있는 거 먹자! 🍲
         </p>
 
-        <div class="bg-red-50 p-4 rounded-2xl text-left space-y-2 text-lg">
-            <p>📅 <b>날짜:</b> 2026년 2월 19일</p>
+        <div class="bg-yellow-50 p-5 rounded-2xl text-left space-y-2 text-lg border-2 border-yellow-200">
+            <p>📅 <b>날짜:</b> 2026년 2월 19일 (설 연휴)</p>
             <p>⏰ <b>시간:</b> 오후 12시</p>
             <p>📍 <b>장소:</b> 의정부역 배스킨라빈스 앞</p>
         </div>
 
         <div id="btn-group" class="flex flex-col space-y-3 pt-4">
-            <button onclick="acceptInvitation()" class="bg-red-400 hover:bg-red-500 text-white py-3 rounded-full text-xl transition-all shadow-md transform hover:scale-105">
-                쬬아아아아앙!! (YES)
+            <button onclick="acceptInvitation()" class="bg-red-400 hover:bg-red-500 text-white py-3 rounded-full text-xl transition-all shadow-md transform hover:scale-105 font-bold">
+                좋아!! 콜!! (YES) 🙆‍♂️
             </button>
-            <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()" class="border border-gray-300 text-gray-400 py-3 rounded-full text-xl bg-white">
+            <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()" class="border-2 border-gray-300 text-gray-400 py-3 rounded-full text-xl bg-white">
                 시른데? 💩 (NO)
             </button>
         </div>
 
         <div id="success-msg" class="hidden space-y-4 animate-bounce">
+            <div class="text-4xl">🎉🎉🎉</div>
             <p class="text-2xl text-pink-500 font-bold break-keep">
-                약속한거다?? <br>
-                그날 봐!!! ❤️❤️❤️
+                약속했다?! <br>
+                그날 늦으면 엉덩이 팡팡이다!! 👋<br>
+                새해 복 많이 받아 ❤️
             </p>
         </div>
 
     </div>
 
     <script>
-        // 똥 이모지 내리는 기능
-        function createPoop() {
-            const poop = document.createElement('div');
-            poop.innerText = '💩'; 
-            poop.classList.add('poop');
+        // 설날 아이콘 비내리기 (복주머니, 윷, 떡국, 돈)
+        function createFallingItem() {
+            const items = ['🧧', '🎋', '🍲', '💰', '🙇', '🪁'];
+            const item = document.createElement('div');
+            item.innerText = items[Math.floor(Math.random() * items.length)];
+            item.classList.add('falling-item');
             
-            // 랜덤 위치 및 속도 설정
-            poop.style.left = Math.random() * 100 + 'vw';
-            poop.style.fontSize = Math.random() * 20 + 20 + 'px'; // 크기 20~40px
-            poop.style.animationDuration = Math.random() * 2 + 3 + 's'; // 떨어지는 속도 3~5초
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+            item.style.animationDuration = Math.random() * 3 + 3 + 's'; 
 
-            document.body.appendChild(poop);
+            document.body.appendChild(item);
 
-            // 5초 뒤에 삭제 (메모리 관리)
-            setTimeout(() => { poop.remove(); }, 5000);
+            setTimeout(() => { item.remove(); }, 6000);
         }
 
-        // 0.3초마다 똥 생성
-        setInterval(createPoop, 300);
-
+        setInterval(createFallingItem, 400); // 0.4초마다 생성
 
         // NO 버튼 도망가기
         function moveButton() {
@@ -125,9 +123,13 @@
             btn.style.zIndex = '50';
         }
 
+        // 수락 시 폭죽 효과
         function acceptInvitation() {
             document.getElementById('btn-group').classList.add('hidden');
             document.getElementById('success-msg').classList.remove('hidden');
+            
+            // 폭죽 효과 추가
+            for(let i=0; i<30; i++) setTimeout(createFallingItem, i*50);
         }
     </script>
 </body>
